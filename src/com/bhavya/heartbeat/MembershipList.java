@@ -16,6 +16,15 @@ public class MembershipList {
         this.members.put(member.getId(), member);
     }
 
+    public void deleteMember(String id) {
+        this.members.remove(id);
+    }
+
+    public void updateMemberHeartbeat(String id) {
+        MemberInfo memberInfo = this.members.get(id);
+        memberInfo.incrementHeartBeat();
+    }
+
     public void update(HeartbeatUpdateRequest request) {
         for (HeartbeatUpdateInfo requestInfo: request.getHeartbeats()) {
             String serverId = requestInfo.getId();

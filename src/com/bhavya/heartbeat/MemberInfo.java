@@ -14,6 +14,10 @@ public class MemberInfo {
         this.status = Status.ALIVE;
     }
 
+    public void incrementHeartBeat() {
+        this.lastHeartBeat += 1;
+    }
+
     public void update(Long lastTimestamp, Long lastHeartBeat) {
         this.lastTimestamp = lastTimestamp;
         this.lastHeartBeat = lastHeartBeat;
@@ -21,5 +25,17 @@ public class MemberInfo {
 
     public String getId() {
         return id;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public Long getLastTimestamp() {
+        return lastTimestamp;
     }
 }
