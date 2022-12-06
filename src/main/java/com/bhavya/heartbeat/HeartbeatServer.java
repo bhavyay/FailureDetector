@@ -1,4 +1,4 @@
-package src.com.bhavya.heartbeat;
+package com.bhavya.heartbeat;
 
 import java.util.List;
 import java.util.concurrent.Executors;

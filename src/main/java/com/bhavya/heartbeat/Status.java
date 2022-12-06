@@ -1,4 +1,4 @@
-package src.com.bhavya.heartbeat;
+package com.bhavya.heartbeat;
 
 public enum Status {
     ALIVE,

@@ -1,9 +1,6 @@
-package src.com.bhavya.heartbeat;
+package com.bhavya.heartbeat;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class MembershipList {
     private Map<String, MemberInfo> members;
@@ -41,5 +38,20 @@ public class MembershipList {
 
     public List<MemberInfo> getMembers() {
         return new ArrayList<>(members.values());
+    }
+
+    public List<MemberInfo> selectPeers(int count, List<String> nodesToExclude) {
+        Set<String> memberSet = members.keySet();
+        for (String memberId : nodesToExclude) {
+            memberSet.remove(memberId);
+        }
+
+        List<String> memberIds = new ArrayList<>(memberSet);
+        List<MemberInfo> selectedPeers = new ArrayList<>();
+        for(int i = 0; i < count; i++) {
+            int rnd = new Random().nextInt(memberIds.size());
+            selectedPeers.add(members.get(memberIds.get(rnd)));
+        }
+        return selectedPeers;
     }
 }

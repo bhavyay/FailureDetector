@@ -1,4 +1,4 @@
-package src.com.bhavya.heartbeat;
+package com.bhavya.heartbeat;
 
 public class Constants {
     public final static int SUSPICION_THRESHOLD_BEATS = 3;
